@@ -15,6 +15,7 @@ var html_product_dropdown_select_id = 'xxx';
 var html_assignee_id = 'xxx';
 var html_assignee_candidate_dropdown_id = 'xxx';
 var html_due_day_id = 'xxx';
+var html_sqa_verify_id = 'xxx';
 
 // reduce product selection dropdown list
 var project_name = document.getElementById(html_project_name_id).innerHTML;
@@ -54,4 +55,7 @@ var dd = due_date.getDate();
 var mm = (['Jan', 'Feb', 'Mar','Apr', 'May','Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])[due_date.getMonth()];
 var yyyy = due_date.getFullYear() - 2000;
 document.getElementById(html_due_day_id).value = dd+"/"+mm+"/"+yyyy;
+
+// set no to SQA verification by default
+document.getElementById(html_sqa_verify_id).value = 'no';
 
