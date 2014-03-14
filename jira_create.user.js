@@ -16,6 +16,8 @@ var html_assignee_id = 'xxx';
 var html_assignee_candidate_dropdown_id = 'xxx';
 var html_due_day_id = 'xxx';
 var html_sqa_verify_id = 'xxx';
+var html_affect_version_id = 'xxx';
+var html_fix_version_id = 'xxx';
 
 // reduce product selection dropdown list
 var project_name = document.getElementById(html_project_name_id).innerHTML;
@@ -58,4 +60,28 @@ document.getElementById(html_due_day_id).value = dd+"/"+mm+"/"+yyyy;
 
 // set no to SQA verification by default
 document.getElementById(html_sqa_verify_id).value = 'no';
+
+// set smallest number to "Affects Version"
+var aff_ver_array = document.getElementById(html_affect_version_id).options;
+var min = 10000;
+var and = 0;
+for(var i=1; i<aff_ver_array.length ; i++) {
+    if(aff_ver_array[i].label != 'Unknown' && aff_ver_array[i].label < min) {
+        ans = aff_ver_array[i].value;
+        min = aff_ver_array[i].label;
+    }
+}
+document.getElementById(html_affect_version_id).value = ans;
+
+// set largest number to "Fix Version"
+var fix_ver_array = document.getElementById(html_fix_version_id).options;
+var max = -10000;
+ans = 0;
+for(var i=1; i<fix_ver_array.length ; i++) {
+    if(fix_ver_array[i].label != 'Unknown' && fix_ver_array[i].label > max) {
+        ans = fix_ver_array[i].value;
+        max = fix_ver_array[i].label;
+    }
+}
+document.getElementById(html_fix_version_id).value = ans;
 

@@ -4,3 +4,5 @@ Jira is a great tool to manage issues, but there are many fields should be fille
 	- the due day is 7 days after today by default
 	- assign to creator by default
 	- SQA verification is no by default
+	- set the affected version as the smallest option number
+	- set the fix version as the largest option number
